@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iPhone Alarm & Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="js.js"></script>
+</head>
+<body>
+
+  <div class="phone">
+    <div class="notch"></div>
+
+    <div class="screen">
+      <div class="tabs">
+        <button onclick="showTab('alarm')">Alarm</button>
+        <button onclick="showTab('stopwatch')">Stopwatch</button>
+      </div>
+
+      <!-- Alarm Tab -->
+      <div id="alarm" class="tab">
+        <h2>Alarm</h2>
+        <input type="time" id="alarmTime">
+        <button class="set-btn" onclick="setAlarm()">Set Alarm</button>
+        <p id="alarmStatus">No alarm set</p>
+        <button id="stopAlarmBtn" onclick="stopAlarm()" style="display:none; margin-top:10px;">Stop Alarm</button>
+      </div>
+
+      <!-- Stopwatch Tab -->
+      <div id="stopwatch" class="tab" style="display:none;">
+        <h2>Stopwatch</h2>
+        <div id="stopwatchDisplay">00:00,00</div>
+        <div class="stopwatch-controls">
+          <button class="start" onclick="startStopwatch()">Start</button>
+          <button class="stop" onclick="stopStopwatch()">Stop</button>
+          <button class="reset" onclick="resetStopwatch()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-button"></div>
+  </div>
+
+  <!-- 🔊 Alarm sound (looped) -->
+  <audio id="alarmSound" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9a9c232830.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
